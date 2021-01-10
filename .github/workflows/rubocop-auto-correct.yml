@@ -23,6 +23,6 @@ jobs:
           bundle install -j4
       - name: RuboCop auto-correct
         env:
-          OCTOKIT_ACCESS_TOKEN=${{ secrets.GITHUB_TOKEN }}
+          OCTOKIT_ACCESS_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           bin/rubocop_auto_correct_pull_request
