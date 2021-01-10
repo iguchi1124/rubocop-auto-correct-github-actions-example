@@ -1,10 +1,5 @@
 require 'octokit'
 require 'rubocop'
-require 'yaml'
-
-def system!(*args)
-  system(*args) || abort
-end
 
 namespace :rubocop do
   task :auto_correct_pull_request, :environment do
@@ -14,15 +9,15 @@ namespace :rubocop do
 
     title = "RuboCop auto-correct #{cop.cop_name}"
     branch = "rubocop/auto-correct/#{cop.cop_name}"
-    system! "git switch -c #{branch}"
+    sh "git switch -c #{branch}"
 
-    system! 'cat /dev/null > .rubocop_todo.yml'
-    system! "rubocop -a --only #{cop.cop_name}"
-    system! 'rubocop --regenerate-todo'
+    sh 'cat /dev/null > .rubocop_todo.yml'
+    sh "rubocop -a --only #{cop.cop_name}"
+    sh 'rubocop --regenerate-todo'
 
-    system! 'git add .'
-    system! "git commit -m '#{title}'"
-    system! "git push origin #{branch}"
+    sh 'git add .'
+    sh "git commit -m '#{title}'"
+    sh "git push origin #{branch}"
 
     octokit_client = Octokit::Client.new
     octokit_client.create_pull_request(ENV['GITHUB_REPOSITORY'], 'main', branch, title)
