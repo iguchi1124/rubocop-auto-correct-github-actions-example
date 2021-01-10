@@ -1,5 +1,6 @@
 require 'octokit'
 require 'rubocop'
+require 'yaml'
 
 def system!(*args)
   system(*args) || abort
@@ -7,7 +8,7 @@ end
 
 namespace :rubocop do
   task :auto_correct_pull_request, :environment do
-    todos = YAML.load_file '.rubocop_todo.yml'
+    todos = YAML.load_file('.rubocop_todo.yml')
     cops = todos.keys.map { |cop_name| RuboCop::Cop::Registry.all.find { |klass| klass.cop_name == cop_name } }.select(&:support_autocorrect?)
     cop = cops.sample
 
