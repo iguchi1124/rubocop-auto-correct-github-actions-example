@@ -1,8 +1,8 @@
 name: RuboCop auto-correct
 on:
+  workflow_dispatch:
   schedule:
     - cron:  '0 9 * * 1-4'
-  workflow_dispatch:
 jobs:
   rubocop-auto-correct-pull-request:
     runs-on: ubuntu-latest
@@ -28,4 +28,4 @@ jobs:
         run: |
           git config --local user.name "github-actions[bot]"
           git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          bin/rubocop_auto_correct_pull_request
+          bundle exec rails rubocop:auto_correct_pull_request
