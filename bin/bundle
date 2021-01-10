@@ -67,7 +67,7 @@ m = Module.new do
   def bundler_version
     @bundler_version ||=
       env_var_version || cli_arg_version ||
-        lockfile_version
+      lockfile_version
   end
 
   def bundler_requirement
