@@ -1,0 +1,15 @@
+current directory: /home/runner/work/rubocop-auto-correct-example/rubocop-auto-correct-example/vendor/bundle/ruby/2.6.0/gems/bindex-0.8.1/ext/skiptrace
+/opt/hostedtoolcache/Ruby/2.6.5/x64/bin/ruby -I /opt/hostedtoolcache/Ruby/2.6.5/x64/lib/ruby/2.6.0 -r ./siteconf20210110-2696-6tvsym.rb extconf.rb
+creating Makefile
+
+current directory: /home/runner/work/rubocop-auto-correct-example/rubocop-auto-correct-example/vendor/bundle/ruby/2.6.0/gems/bindex-0.8.1/ext/skiptrace
+make "DESTDIR=" clean
+
+current directory: /home/runner/work/rubocop-auto-correct-example/rubocop-auto-correct-example/vendor/bundle/ruby/2.6.0/gems/bindex-0.8.1/ext/skiptrace
+make "DESTDIR="
+compiling cruby.c
+linking shared-object skiptrace/internal/cruby.so
+
+current directory: /home/runner/work/rubocop-auto-correct-example/rubocop-auto-correct-example/vendor/bundle/ruby/2.6.0/gems/bindex-0.8.1/ext/skiptrace
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 cruby.so ./.gem.20210110-2696-2su3zs/skiptrace/internal
