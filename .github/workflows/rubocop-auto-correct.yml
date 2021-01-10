@@ -1,5 +1,5 @@
 name: RuboCop auto-correct
-on: [push]
+on: workflow_dispatch
 jobs:
   rubocop-auto-correct-pull-request:
     runs-on: ubuntu-latest
