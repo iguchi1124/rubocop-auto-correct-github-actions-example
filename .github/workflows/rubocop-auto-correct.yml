@@ -1,7 +1,5 @@
 name: RuboCop auto-correct
-on:
-  schedule:
-    - cron: '*/5 * * * *'
+on: [push]
 jobs:
   build:
     runs-on: ubuntu-latest
