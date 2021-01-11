@@ -1,8 +1,5 @@
 name: RuboCop auto-correct
-on:
-  workflow_dispatch:
-  schedule:
-    - cron:  '0 9 * * 1-4'
+on: workflow_dispatch
 jobs:
   rubocop-auto-correct-pull-request:
     runs-on: ubuntu-latest
